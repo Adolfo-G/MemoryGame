@@ -28,11 +28,11 @@ function Login() {
 
     return (
         <>
-            <div className="login-container">
-                <h2>Login</h2>
-                <form onSubmit={handleFormSubmit}>
+            <div className="login-wrapper">
+                <form className="form" onSubmit={handleFormSubmit}>
+                    <h2>Login</h2>
                     <label htmlFor="email">Email</label>
-                    <div className="">
+                    <div className="input-group">
                         <input
                             placeholder="email"
                             name="email"
@@ -42,7 +42,7 @@ function Login() {
                         />
                     </div>
                     <label htmlFor="pwd">Password</label>
-                    <div className="">
+                    <div className="input-group">
                         <input
                             placeholder="******"
                             name="password"
@@ -51,9 +51,10 @@ function Login() {
                             onChange={handleChange}
                         />
                     </div>
-                    <button>Submit</button>
+                    <button className="submit-btn">Submit</button>
+                    <Link to="/signup"><button className="signup" id="signup">Signup</button></Link>
                 </form>
-                <Link to="/signup"><button>Signup</button></Link>
+                
             </div>
         </>
     )
