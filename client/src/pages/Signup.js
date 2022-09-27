@@ -25,11 +25,11 @@ function Signup() {
         });
     };
     return (
-        <div className="login-container">
-            <h2>Signup</h2>
-            <form onSubmit={handleFormSubmit}>
+        <div className="login-wrapper">
+            <form className='form' onSubmit={handleFormSubmit}>
+                <h2>Signup</h2>
                 <label htmlFor="username">User name:</label>
-                <div className="">
+                <div className="input-group">
                     <input
                         placeholder="user name"
                         name="username"
@@ -39,7 +39,7 @@ function Signup() {
                     />
                 </div>
                 <label htmlFor="email">Email:</label>
-                <div className="">
+                <div className="input-group">
                     <input
                         placeholder="youremail@test.com"
                         name="email"
@@ -49,7 +49,7 @@ function Signup() {
                     />
                 </div>
                 <label htmlFor="pwd">Password:</label>
-                <div className="">
+                <div className="input-group">
                     <input
                         placeholder="******"
                         name="password"
@@ -59,7 +59,7 @@ function Signup() {
                     />
                 </div>
                 <div className="">
-                    <button type="submit">Submit</button>
+                    <button className='submit-btn' type="submit">Submit</button>
                 </div>
             </form>
         </div>
