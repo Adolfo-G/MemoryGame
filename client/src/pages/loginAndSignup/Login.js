@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import "./style.css";
 
 function Login() {
     const [formState, setFormState] = useState({ email: '', password: '' });
