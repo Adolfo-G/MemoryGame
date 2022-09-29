@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import "./style.css";
 
@@ -29,33 +29,35 @@ function Login() {
 
     return (
         <>
-            <div className="login-wrapper">
-                <form className="form" onSubmit={handleFormSubmit}>
-                    <h2>Login</h2>
-                    <label htmlFor="email">Email</label>
-                    <div className="input-group">
-                        <input
-                            placeholder="email"
-                            name="email"
-                            type="email"
-                            id="email"
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <label htmlFor="pwd">Password</label>
-                    <div className="input-group">
-                        <input
-                            placeholder="******"
-                            name="password"
-                            type="password"
-                            id="pwd"
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <button className="submit-btn">Submit</button>
-                    <Link to="/signup"><button className="signup" id="signup">Signup</button></Link>
-                </form>
-                
+            <div className="loginAndSignup">
+                <div className="login-wrapper">
+                    <form className="form" onSubmit={handleFormSubmit}>
+                        <h2>Login</h2>
+                        <label htmlFor="email">Email</label>
+                        <div className="input-group">
+                            <input
+                                placeholder="email"
+                                name="email"
+                                type="email"
+                                id="email"
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <label htmlFor="pwd">Password</label>
+                        <div className="input-group">
+                            <input
+                                placeholder="******"
+                                name="password"
+                                type="password"
+                                id="pwd"
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <button className="submit-btn">Submit</button>
+                        <Link to="/signup"><button className="signup" id="signup">Signup</button></Link>
+                    </form>
+
+                </div>
             </div>
         </>
     )
