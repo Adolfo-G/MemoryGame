@@ -1,0 +1,52 @@
+:root{
+    --orange: #ff652f;
+    --blue:rgb(0, 166, 255);
+    --grey:rgb(65, 65, 65, .9);
+  }
+div.scoreboard-body {
+    background: url('../../../public/images/mel-poole-eo5Hrzyb4D0-unsplash.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.score-wrapper {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scoreboard{
+    background-color: rgb(65, 65, 65, .9);
+    width: 60vw;
+    height: 75vh;
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+table{
+    text-align: center;
+    padding: 20px 30px 0px 30px;
+    color: var(--blue);
+}
+thead{
+    font-size: 24px;
+    color: var(--orange);
+}
+tbody{
+    font-size: 20px;
+}
+
+.sb-title-div{
+    /* rotate: 100; */
+    background-image: linear-gradient(rgb(146, 113, 41), var(--orange));
+    background-clip: text;
+}
+.sb-title{
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    color:transparent;
+    
+}
