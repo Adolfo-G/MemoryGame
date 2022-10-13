@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Auth from "../../utils/auth";
 import "./style.css";
 
 function Signup() {
@@ -12,9 +13,38 @@ function Signup() {
         event.preventDefault();
 
         //fetch call
+        if (formState.email !== '' && formState.password !== '' && formState.username !== "") {
+            try {
+                async function signupUser(url = '', data = {}) {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        mode: 'cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data)
+                    });
+                    if (!response.ok) {
+                        console.log("response failed")
+                        alert("invalid email / password or given email may already have an account")
+                    }
+                    return response.json();
+                }
 
-        //Auth.login(data.addUser.token);
-        //window.location.pathname('/')
+                signupUser('http://localhost:3001/api/users/signup', { ...formState })
+                    .then((data) => {
+                        if (data.token) {
+                            setFormState({
+                                email: '',
+                                password: '',
+                                username: '',
+                            });
+                            Auth.login(data.token)
+                        }
+                    })
+                    .catch((err) => alert("There was an issue creating an account. Please try again"))
+
+            } catch { alert("There was an issue creating an account. Please try again") }
+        } else { alert("Missing field data") }
+
 
     };
 

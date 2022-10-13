@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
+import Auth from "../../utils/auth";
 import "./style.css";
 
 function Login() {
@@ -7,16 +8,37 @@ function Login() {
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-
         //fetch call
+        if (formState.email!==''&&formState.password!=='') {
+            try {
+                async function createUser(url = '', data = {}) {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        mode: 'cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data)
+                    });
+                    if (!response.ok) {
+                        console.log("response failed")
+                        alert("invalid email / password")
+                    }
+                    return response.json();
+                }
 
-        //Auth.login(data.login.token);
+                createUser('http://localhost:3001/api/users/login', { ...formState })
+                    .then((data) => {
+                        if(data.token){
+                            setFormState({
+                                email: '',
+                                password: '',
+                            });
+                            Auth.login(data.token)
+                        }
+                    })
+                    .catch((err)=>alert("username/password is incorrect"))
+            } catch {alert("username/password is incorrect")}
+        }else{alert("Missing email /password")}
 
-        setFormState({
-            email: '',
-            password: '',
-        });
-        //window.location.pathname('/')
     };
 
     const handleChange = (event) => {

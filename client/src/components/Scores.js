@@ -1,8 +1,8 @@
 import React from "react";
 
-function Scores(scores) {
-    let name = scores.scores.name;
-    let score = scores.scores.score;
+function Scores(data) {
+    let name = data.score.username;
+    let score = data.score.score;
     return (
         <>
             <tr>

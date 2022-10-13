@@ -1,34 +1,28 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Scores from '../../components/Scores';
 import './style.css'
 
 function Scoreboard() {
-    let testScores = [
-        {
-            "name": "Johnny",
-            "score": 150 
-        },
-        { 
-            "name":"Daniel",
-            "score": 120
-        },
-        { 
-            "name":"Sam",
-            "score": 92 
-        },
-        { 
-            "name":"Miguel",
-            "score": 90 
-        },
-        { 
-            "name":"Eli",
-            "score": 88
-        },
-    ]
+    const [scores, setScores] = useState([])
 
-    let [scores, setScores] = useState('');
+    const getScores = () => {
+        async function fetchScores() {
+            try {
+                let data = await fetch('http://localhost:3001/api/users/scores');
+                return data
+            } catch {
+                console.log("data failed to load")
+            }
+        }
+        fetchScores()
+            .then((res) => res.json())
+            .then((data) => setScores(data))
+            .catch((err) => console.log(err));
+    }
 
-    // fetch call to get data
+    useEffect(() => {
+        getScores()
+    }, [])
 
     return (
         <>
@@ -46,11 +40,11 @@ function Scoreboard() {
                                 </tr>
                             </thead>
                             <tbody>
-                            <>
-                            {testScores.map((scores) => (
-                                <Scores scores={scores}/>
-                            ))}
-                        </>
+                                <>
+                                    {scores.map((score) => (
+                                        <Scores score={score} />
+                                    ))}
+                                </>
                             </tbody>
                         </table>
                     </div>
