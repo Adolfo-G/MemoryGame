@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/loginAndSignup/Login';
 import Signup from './pages/loginAndSignup/Signup';
 import Scoreboard from './pages/scoreboard/Scoreboard';
+import Profile from './pages/profile/Profile';
 
 function App() {
   return (
@@ -20,6 +21,10 @@ function App() {
           <Route
             path='/scoreboard'
             element={<Scoreboard/>}
+          />
+          <Route
+          path='/profile'
+          element={<Profile/>}
           />
         </Routes>
       </Router>
