@@ -10,7 +10,7 @@
     color: white;
     position: relative;
     background: rgb(85, 85, 85,.9);
-    height: 60vh;
+    height: 70vh;
     width: 75vw;
     margin-left: auto;
     margin-right: auto;
@@ -45,4 +45,38 @@
 .profileInfo{
     margin-left: 10%;
     padding-bottom: 10px;
+}
+.edit-name-btn{
+    background: none;
+    border: none;
+    text-decoration: underline;
+    color: rgb(3, 167, 255);
+    font-size: 16px;
+}
+.edit-name-btn:hover{
+    cursor: pointer;
+}
+.edit-username{
+    width: 60%;
+    padding: 10px 0;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background-color: transparent;
+    color: inherit;
+}
+.submit-namechange{
+    background: none;
+    border: none;
+    text-decoration: underline;
+    color: rgb(3, 167, 255);
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.submit-namechange:hover{
+    cursor: pointer;
 }
