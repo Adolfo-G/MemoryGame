@@ -1,0 +1,10 @@
+:root{
+  --orange: #ff652f;
+  --blue:rgb(0, 166, 255);
+}
+
+body {
+  background-image: linear-gradient(to bottom right, #e3883f, red);
+  color: black;
+}
+
