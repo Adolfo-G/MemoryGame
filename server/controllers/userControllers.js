@@ -11,7 +11,6 @@ module.exports = {
   // Get a single user
   getSingleUser(req, res) {
     User.findOne({ email: req.params.email })
-      .select('-__v')
       .then((user) =>
         !user
           ? res.status(404).json({ message: 'No user with that ID' })
@@ -20,19 +19,25 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
   // get user scores
-  getHighScores(req,res){
+  getHighScores(req, res) {
     User.aggregate([
-      {$sort:{score:-1}},
-      {$limit:5}
+      { $sort: { score: -1 } },
+      { $limit: 5 }
     ])
-      .then((scores)=>res.json(scores))
-      .catch((err)=>res.status(500).json(err));
+      .then((scores) => res.json(scores))
+      .catch((err) => res.status(500).json(err));
   },
   // update user score
-  updateUserScore(req,res){
-    User.findOneAndUpdate({email:req.body.email},{score:req.body.score},{new:true})
-    .then((user)=>res.json(user))
-    .catch((err)=>res.status(500).json(err));
+  updateUserScore(req, res) {
+    User.findOneAndUpdate({ email: req.body.email }, { score: req.body.score }, { new: true })
+      .then((user) => res.json(user))
+      .catch((err) => res.status(500).json(err));
+  },
+  // update username
+  updateUsername(req, res) {
+    User.findOneAndUpdate({ email: req.body.email }, { username: req.body.username }, { new: true })
+      .then((user) => res.json(user))
+      .catch((err) => res.status(500).json(err));
   },
   // create a new user
   createUser(req, res) {
@@ -47,12 +52,12 @@ module.exports = {
       })
       .catch((err) => res.status(500).json(err));
   },
-  
+
   async loginUser(req, res) {
     const user = await User.findOne({ email: req.body.email })
     let password = req.body.password
     let correctPw = await user.isCorrectPassword(password)
-    if ((!user || user === null)||(user !== null && user && !correctPw)) {
+    if ((!user || user === null) || (user !== null && user && !correctPw)) {
       res.status(404).json({ message: 'Incorrect credentials' });
     } else if (user !== null && user && correctPw) {
       const token = signToken(user);
