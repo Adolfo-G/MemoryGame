@@ -5,12 +5,14 @@ import Login from './pages/loginAndSignup/Login';
 import Signup from './pages/loginAndSignup/Signup';
 import Scoreboard from './pages/scoreboard/Scoreboard';
 import Profile from './pages/profile/Profile';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   return (
     <>
       <Router>
-      <Routes>
+        <Navbar />
+        <Routes>
           <Route
             path="/"
             element={<Home />}
@@ -25,11 +27,11 @@ function App() {
           />
           <Route
             path='/scoreboard'
-            element={<Scoreboard/>}
+            element={<Scoreboard />}
           />
           <Route
-          path='/profile'
-          element={<Profile/>}
+            path='/profile'
+            element={<Profile />}
           />
         </Routes>
       </Router>

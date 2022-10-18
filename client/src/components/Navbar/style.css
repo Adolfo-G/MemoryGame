@@ -1,0 +1,44 @@
+.pageName {
+    text-decoration: none;
+    color: rgb(255, 207, 64);
+}
+
+.pageName:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+
+.header {
+    font-size: small;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10% 0 10%;
+    background-color: rgb(40, 40, 40);
+}
+
+.navLinks {
+    list-style: none;
+}
+
+.navLink {
+    display: inline-flex;
+}
+
+.navLinks li {
+    display: inline-block;
+    padding: 0px 0px 0px 20px;
+}
+
+.link {
+    color: white;
+    font-weight: 500;
+    font-size: large;
+    text-decoration: none;
+    color: rgb(255, 207, 64);
+}
+
+.link:hover {
+    opacity: .8;
+}

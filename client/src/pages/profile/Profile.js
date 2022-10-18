@@ -2,6 +2,16 @@ import React, { useEffect, useState } from "react";
 import './style.css'
 import Auth from "../../utils/auth"
 
+function authCheck() {
+    if (Auth.loggedIn() === false) {
+        return (
+            <p className="logged-out-text">
+                You need to be logged in to see this. Use the navigation links above to
+                log in!
+            </p>
+        );
+    }
+}
 
 function Profile() {
     const email = Auth.getProfile().data.email
@@ -82,7 +92,7 @@ function Profile() {
         <div className="profileBG">
             <div className="profileCard">
                 <div className="profileName">
-                    <h1>{profile.username}</h1>
+                    <h1 className="name">{profile.username}</h1>
                     <button className="edit-name-btn" onClick={() => editVisibility()}>Edit Username</button>
                     <form className="namechange-form" onSubmit={() => updateUsername()} style={inputStyle}>
                         <input
@@ -108,4 +118,4 @@ function Profile() {
     )
 }
 
-export default Profile;
+export default Auth.loggedIn()? Profile : authCheck;

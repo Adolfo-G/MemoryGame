@@ -1,6 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import Scores from '../../components/Scores';
 import './style.css'
+import Auth from "../../utils/auth"
+
+function authCheck() {
+    if (Auth.loggedIn() === false) {
+        return (
+            <p className="logged-out-text">
+                You need to be logged in to see this. Use the navigation links above to
+                log in!
+            </p>
+        );
+    }
+}
 
 function Scoreboard() {
     const [scores, setScores] = useState([])
@@ -54,4 +66,4 @@ function Scoreboard() {
     )
 }
 
-export default Scoreboard;
+export default Auth.loggedIn()? Scoreboard: authCheck;
