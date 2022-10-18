@@ -18,6 +18,7 @@ div.loginAndSignup {
 }
 
 .form {
+  text-align: left;
   position: relative;
   width: 100%;
   max-width: 380px;
@@ -81,10 +82,11 @@ div.loginAndSignup {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: white;
 }
 
 .signup {
-  display: block;
   margin-right: auto;
   border: none;
   outline: none;
@@ -96,4 +98,6 @@ div.loginAndSignup {
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: white;
 }
