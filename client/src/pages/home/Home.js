@@ -46,10 +46,11 @@ useEffect(() => {
   if (choiceOne && choiceTwo) {
 
     if (choiceOne.src === choiceTwo.src) {
-      console.log("It's a Match!");
+      console.log("It's a Match! You get a Twinkie Weiner Sandwich!");
       resetTurn();
     } else {
-      console.log("I'm sorry, it's not a match.")
+      console.log("It's not a match.")
+      resetTurn();
     }
   }
 }, [choiceOne, choiceTwo])
