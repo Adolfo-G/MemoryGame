@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import "./style.css";
+import SingleCard from "../../components/SingleCard";
 
 const weirdCards = [
     { "src": "/images/cards/accordAl.png" },
@@ -13,15 +14,17 @@ const weirdCards = [
     { "src": "/images/cards/magazineAl.png" },
     { "src": "/images/cards/ramboAl.png" },
     { "src": "/images/cards/signAl.png" },
-    { "src": "/images/cards/tudentAl.png" },
+    { "src": "/images/cards/studentAl.png" },
     { "src": "/images/cards/talkAl.png" },
-    { "src": "/images/cards/inAl.png" },
+    { "src": "/images/cards/tinAl.png" },
     { "src": "/images/cards/weirdAl.png" }
   ]
 
 function Home() {
-  const [cards, setCards] = useState([])
-  const [turns, setTurns] = useState(0)
+  const [cards, setCards] = useState([]);
+  const [turns, setTurns] = useState(0);
+  const [choiceOne, setChoiceOne] = useState(null);
+  const [choiceTwo, setChoiceTwo] = useState(null);
 
   // shuffle cards
   const shuffleCards = () => {
@@ -33,7 +36,30 @@ function Home() {
       setTurns(0);
   }
 
-  console.log(cards, turns);
+  // handle a choice
+  const handleChoice = (card) => {
+    choiceOne ? setChoiceTwo(card) : setChoiceOne(card)
+  }
+
+// compare two selected cards
+useEffect(() => {
+  if (choiceOne && choiceTwo) {
+
+    if (choiceOne.src === choiceTwo.src) {
+      console.log("It's a Match!");
+      resetTurn();
+    } else {
+      console.log("I'm sorry, it's not a match.")
+    }
+  }
+}, [choiceOne, choiceTwo])
+
+  // reset choices & increase turn
+  const resetTurn = () => {
+    setChoiceOne(null);
+    setChoiceTwo(null);
+    setTurns(prevTurns => prevTurns + 1)
+  }
 
     return (
        <div className="Home">
@@ -42,12 +68,11 @@ function Home() {
 
           <div className="card-grid">
             {cards.map(card => (
-              <div className= "card" key={card.id}>
-                <div>
-                  <img className="front" src="/images/cards/coverCard.png" alt="card front"/>
-                  <img className="back" src={card.src} alt="card back" />
-                </div>
-              </div>
+              <SingleCard 
+                key={card.id} 
+                card={card}
+                handleChoice={handleChoice}
+              />
             ))}
           </div>
        </div>
