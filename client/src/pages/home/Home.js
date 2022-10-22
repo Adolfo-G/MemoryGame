@@ -5,6 +5,7 @@ import "../../components/SingleCard.css";
 import SingleCard from "../../components/SingleCard.js";
 
 const weirdCards = [
+
     { "src": "/images/cards/accordAl.png", matched: false },
     { "src": "/images/cards/amishAl.png", matched: false },
     { "src": "/images/cards/blurAl.png", matched: false },
@@ -22,6 +23,7 @@ const weirdCards = [
   ]
 
 function Home() {
+
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
@@ -38,6 +40,10 @@ function Home() {
       setChoiceTwo(null);
       setCards(shuffleCards);
       setTurns(0);
+
+    setCards(shuffleCards);
+    setTurns(0);
+
   }
 
   // handle a choice
@@ -63,9 +69,25 @@ useEffect(() => {
       resetTurn();
     } else {
       setTimeout(() => resetTurn(), 1000);
+
+  // compare two selected cards
+  useEffect(() => {
+    if (choiceOne && choiceTwo) {
+      if (choiceOne.src === choiceTwo.src && choiceOne.id !== choiceTwo.id) {
+        for (let i = 0; i < cards.length; i++) {
+          if (cards[i].src === choiceOne.src) {
+            cards[i] = ''
+          }
+        }
+        setCards(cards)
+        console.log("It's a Match! You get a Twinkie Weiner Sandwich!");
+        resetTurn();
+      } else {
+        console.log("It's not a match.")
+        resetTurn();
+      }
     }
-  }
-}, [choiceOne, choiceTwo])
+  }, [choiceOne, choiceTwo])
 
 console.log(cards);
 
@@ -101,6 +123,21 @@ console.log(cards);
           <p>Turns: {turns}</p>
        </div>
     );
+  return (
+    <div className="Home">
+      <h1>Weird Memory</h1>
+      <button onClick={shuffleCards}>New Game</button>
+      <div className="card-grid">
+        {cards.map(card => (
+          <SingleCard
+            key={card.id}
+            card={card}
+            handleChoice={handleChoice}
+          />
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default Home;

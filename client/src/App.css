@@ -15,15 +15,18 @@ button {
   font-size: 1em;
 }
 
-button:hoover {
+button:hover {
   background: red;
   color: black;
 }
 
 .card-grid {
-  margin-top: 40px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  cursor: pointer;
+  margin-top: 40px;
+  width: 80.3px;
+  height: 80.3px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
   padding: 0 10px 0 10px;
 }
