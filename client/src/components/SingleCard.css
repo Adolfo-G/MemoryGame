@@ -1,12 +1,29 @@
 .card {
     position: relative;
-    width: 80.3px;
-    height: 80.3px;
-
 }
 
 .card img {
     display: block;
+}
+
+/* front of card - the picture */
+.card .front {
+    transform: rotateY(90deg);
+    position: absolute;
+} 
+.flipped .front {
+    transform: rotateY(0deg);
+    position: absolute;
+}
+
+/* back of card - cover */
+.card .back {
+    transition: all ease-in 0.2s;
+    transition-delay: 0.2s;
+}
+.flipped .back {
+    transform: rotateY(90deg);
+    transition-delay: 0s;
 }
 
 /* front of card - the picture */

@@ -69,27 +69,8 @@ useEffect(() => {
       resetTurn();
     } else {
       setTimeout(() => resetTurn(), 1000);
-
-  // compare two selected cards
-  useEffect(() => {
-    if (choiceOne && choiceTwo) {
-      if (choiceOne.src === choiceTwo.src && choiceOne.id !== choiceTwo.id) {
-        for (let i = 0; i < cards.length; i++) {
-          if (cards[i].src === choiceOne.src) {
-            cards[i] = ''
-          }
-        }
-        setCards(cards)
-        console.log("It's a Match! You get a Twinkie Weiner Sandwich!");
-        resetTurn();
-      } else {
-        console.log("It's not a match.")
-        resetTurn();
-      }
     }
-  }, [choiceOne, choiceTwo])
-
-console.log(cards);
+  }}, [choiceOne, choiceTwo])
 
   // reset choices & increase turn
   const resetTurn = () => {
@@ -123,21 +104,6 @@ console.log(cards);
           <p>Turns: {turns}</p>
        </div>
     );
-  return (
-    <div className="Home">
-      <h1>Weird Memory</h1>
-      <button onClick={shuffleCards}>New Game</button>
-      <div className="card-grid">
-        {cards.map(card => (
-          <SingleCard
-            key={card.id}
-            card={card}
-            handleChoice={handleChoice}
-          />
-        ))}
-      </div>
-    </div>
-  );
 }
 
 export default Home;
