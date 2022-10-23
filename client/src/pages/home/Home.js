@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 import "./style.css";
 import "../../components/SingleCard.css";
 import SingleCard from "../../components/SingleCard.js";
@@ -69,8 +70,7 @@ useEffect(() => {
     } else {
       setTimeout(() => resetTurn(), 1000);
     }
-  }
-}, [choiceOne, choiceTwo])
+  }}, [choiceOne, choiceTwo])
 
   // reset choices & increase turn
   const resetTurn = () => {
