@@ -19,6 +19,14 @@ function Profile() {
     const [inputStyle, setInputStyle] = useState({ display: 'none' })
     const [newName, setNewName] = useState('')
 
+    let ranks={
+        1:"Bronze",
+        2:"Silver",
+        3:"Gold",
+        4:"Platnum",
+        5:"Diamond"
+    }
+
     const getProfile = () => {
         async function fetchProfile() {
             try {
@@ -105,7 +113,7 @@ function Profile() {
                         <button className="submit-namechange">Submit</button>
                     </form>
                 </div>
-                <h2 className="profileRank profileInfo">Rank: {profile.rank}</h2>
+                <h2 className="profileRank profileInfo">Rank: {ranks[profile.rank] ? ranks[profile.rank] : "Diamond"}</h2>
                 <h2 className="profileMaxHighscore profileInfo">Top HighScore: {profile.score}</h2>
                 <h2 className="profileExp profileInfo">Experience: {exp}/{expMax}</h2>
                 <div id="progressbar">
