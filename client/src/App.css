@@ -31,9 +31,7 @@ button:hover {
   display: grid;
   cursor: pointer;
   margin-top: 40px;
-  width: 80.3px;
-  height: 80.3px;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
   padding: 0 10px 0 10px;
 }
