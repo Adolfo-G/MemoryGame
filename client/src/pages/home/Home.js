@@ -4,23 +4,28 @@ import "./style.css";
 import "../../components/SingleCard.css";
 import SingleCard from "../../components/SingleCard.js";
 
-const weirdCards = [
+const purplePairs = [
 
-    { "src": "/images/cards/accordAl.png", matched: false },
-    { "src": "/images/cards/amishAl.png", matched: false },
-    { "src": "/images/cards/blurAl.png", matched: false },
-    { "src": "/images/cards/bubbleAl.png", matched: false },
-    { "src": "/images/cards/docAl.png", matched: false },
-    { "src": "/images/cards/grammyAl.png", matched: false },
-    { "src": "/images/cards/hollywoodAl.png", matched: false },
-    { "src": "/images/cards/magazineAl.png", matched: false },
-    { "src": "/images/cards/ramboAl.png", matched: false },
-    { "src": "/images/cards/signAl.png", matched: false },
-    { "src": "/images/cards/studentAl.png", matched: false },
-    { "src": "/images/cards/talkAl.png", matched: false },
-    { "src": "/images/cards/tinAl.png", matched: false },
-    { "src": "/images/cards/weirdAl.png", matched: false }
-  ]
+    { "src": "/images/cards/affair.png", matched: false },
+    { "src": "/images/cards/amethyst.png", matched: false },
+    { "src": "/images/cards/bossanova.png", matched: false },
+    { "src": "/images/cards/byzantine.png", matched: false },
+    { "src": "/images/cards/eminence.png", matched: false },
+    { "src": "/images/cards/heart.png", matched: false },
+    { "src": "/images/cards/potions.png", matched: false },
+    { "src": "/images/cards/prince.png", matched: false },
+    { "src": "/images/cards/seance.png", matched: false },
+    { "src": "/images/cards/windsor.png", matched: false },
+    { "src": "/images/cards/wisteria.png", matched: false },
+  ];
+
+// const matchAudio = [
+//   audio for matches will go here
+// ];
+
+// const noMatchAudio = [
+//  audio for non-matches will go here
+// ];
 
 function Home() {
 
@@ -32,7 +37,7 @@ function Home() {
 
   // shuffle cards
   const shuffleCards = () => {
-    const shuffleCards = [...weirdCards, ...weirdCards]
+    const shuffleCards = [...purplePairs, ...purplePairs]
       .sort(() => Math.random() - 0.5)
       .map((card) => ({ ...card, id: Math.random() }))
 
@@ -51,6 +56,10 @@ function Home() {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card)
   }
 
+  function randomNumber(arrLen) {
+    return Math.floor(Math.random() * arrLen);
+  }
+
 // compare two selected cards
 useEffect(() => {
   if (choiceOne && choiceTwo) {
@@ -60,8 +69,12 @@ useEffect(() => {
       setCards(prevCards => {
         return prevCards.map(card => {
           if (card.src === choiceOne.src) {
-            return {...card, matched: true}
+            // let sound = new Audio(noMatchAudio[2]);
+            // sound.play(); 
+            return {...card, matched: true} ;
           } else {
+            // let sound2 = new Audio(matchAudio[1]);
+            // sound2.play();
             return card;
           }
         })
@@ -87,11 +100,11 @@ useEffect(() => {
 
     return (
        <div className="Home">
-          <h1>Weird Memory</h1>
-          <button onClick={shuffleCards}>New Game</button>
+          <h1>History of Violets</h1>
+          <button onClick={shuffleCards}>Pair Some Purples!</button>
 
           <div className="card-grid">
-            {cards.map(card => (
+            {purplePairs.map(card => (
               <SingleCard 
                 key={card.id} 
                 card={card}
