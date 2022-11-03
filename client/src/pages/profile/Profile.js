@@ -6,8 +6,7 @@ function authCheck() {
     if (Auth.loggedIn() === false) {
         return (
             <p className="logged-out-text">
-                You need to be logged in to see this. Use the navigation links above to
-                log in!
+                Please log in to view a profile 
             </p>
         );
     }
@@ -23,7 +22,7 @@ function Profile() {
         1:"Bronze",
         2:"Silver",
         3:"Gold",
-        4:"Platnum",
+        4:"Platinum",
         5:"Diamond"
     }
 

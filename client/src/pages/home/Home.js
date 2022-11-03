@@ -6,19 +6,19 @@ import Auth from "../../utils/auth"
 
 const weirdCards = [
 
-  { "src": "/images/cards/accordAl.png", matched: false },
-  { "src": "/images/cards/amishAl.png", matched: false },
-  { "src": "/images/cards/blurAl.png", matched: false },
-  { "src": "/images/cards/bubbleAl.png", matched: false },
-  { "src": "/images/cards/docAl.png", matched: false },
-  { "src": "/images/cards/grammyAl.png", matched: false },
-  { "src": "/images/cards/hollywoodAl.png", matched: false },
-  { "src": "/images/cards/magazineAl.png", matched: false },
-  { "src": "/images/cards/ramboAl.png", matched: false },
-  { "src": "/images/cards/signAl.png", matched: false },
-  { "src": "/images/cards/studentAl.png", matched: false },
-  { "src": "/images/cards/talkAl.png", matched: false },
-  { "src": "/images/cards/tinAl.png", matched: false },
+  // { "src": "/images/cards/accordAl.png", matched: false },
+  // { "src": "/images/cards/amishAl.png", matched: false },
+  // { "src": "/images/cards/blurAl.png", matched: false },
+  // { "src": "/images/cards/bubbleAl.png", matched: false },
+  // { "src": "/images/cards/docAl.png", matched: false },
+  // { "src": "/images/cards/grammyAl.png", matched: false },
+  // { "src": "/images/cards/hollywoodAl.png", matched: false },
+  // { "src": "/images/cards/magazineAl.png", matched: false },
+  // { "src": "/images/cards/ramboAl.png", matched: false },
+  // { "src": "/images/cards/signAl.png", matched: false },
+  // { "src": "/images/cards/studentAl.png", matched: false },
+  // { "src": "/images/cards/talkAl.png", matched: false },
+  // { "src": "/images/cards/tinAl.png", matched: false },
   { "src": "/images/cards/weirdAl.png", matched: false }
 ]
 
@@ -108,7 +108,7 @@ function Home() {
         isDone = true
       }
     }
-    if (isDone === true) {
+    if (isDone === true && email!=="") {
       try {
         async function fetchProfile() {
           try {
@@ -127,6 +127,8 @@ function Home() {
       } catch {
         console.log("error retreving profile")
       }
+    }else if(isDone === true && email ===""){
+      setRunCheck(false)
     }
     done =  isDone;
   }
@@ -173,8 +175,8 @@ function Home() {
       <button onClick={shuffleCards}>New Game</button>
       {!runCheck ?
         <div>
-          <div>Nice work</div>
-          <div>Your Score Is {score}</div>
+          <h1>Congratulations!</h1>
+          <h2>Your Score Is {score}</h2>
         </div>
         :
         <div>
