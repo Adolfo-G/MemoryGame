@@ -1,7 +1,7 @@
 :root{
-    --orange: #ff652f;
-    --blue:rgb(0, 166, 255);
-    --grey:rgb(65, 65, 65, .9);
+    --windsor: #580e8b;
+    --wisteria:#c78cd9;
+    --snow:#fcf0fc;
   }
 div.scoreboard-body {
     background: url('../../../public/images/mel-poole-eo5Hrzyb4D0-unsplash.jpg') no-repeat center;
@@ -27,11 +27,11 @@ div.scoreboard-body {
 table{
     text-align: center;
     padding: 20px 30px 0px 30px;
-    color: var(--blue);
+    color: var(--windsor);
 }
 thead{
     font-size: 24px;
-    color: var(--orange);
+    color: var(--wisteria);
 }
 tbody{
     font-size: 20px;
@@ -39,7 +39,7 @@ tbody{
 
 .sb-title-div{
     /* rotate: 100; */
-    background-image: linear-gradient(rgb(146, 113, 41), var(--orange));
+    background-image: linear-gradient(rgb(146, 113, 41), var(--windsor));
     background-clip: text;
 }
 .sb-title{

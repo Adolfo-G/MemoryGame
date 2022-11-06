@@ -1,11 +1,12 @@
 :root{
-  --orange: #ff652f;
-  --blue:rgb(0, 166, 255);
+  --windsor: #580e8b;
+  --wisteria:#c78cd9;
+  --snow:#fcf0fc;
 }
 
 body {
-  background-image: linear-gradient(to bottom right, #e3883f, red);
-  color: black;
+  background-image: linear-gradient(to bottom right, var(--wisteria), var(--windsor));
+  color: var(--snow);
   padding: 2px;
 }
 

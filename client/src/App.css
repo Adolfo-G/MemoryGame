@@ -1,14 +1,21 @@
+:root{
+  --windsor: #580e8b;
+  --wisteria:#c78cd9;
+  --seance: #ac28a9;
+  --snow:#fcf0fc;
+}
+
 .App {
   max-width: 860px;
   margin: 40px auto;
 }
 
 button {
-  background: black;
-  border: 2px solid #dee44f;
+  background: var(--windsor);
+  border: 2px solid var(--windsor);
   padding: 7px 14px;
   border-radius: 10px;
-  color: black;
+  color: var(--snow);
   font-weight: 400;
   text-transform: capitalize;
   cursor: pointer;
@@ -16,8 +23,8 @@ button {
 }
 
 button:hover {
-  background: red;
-  color: black;
+  background: var(--seance);
+  color: var(--snow);
 }
 
 .card-grid {
