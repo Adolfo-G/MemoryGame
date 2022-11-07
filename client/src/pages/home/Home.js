@@ -1,31 +1,28 @@
 import React, { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import "./style.css";
 import "../../components/SingleCard.css";
 import SingleCard from "../../components/SingleCard.js";
 
 const purplePairs = [
+  { "src": "/images/cards/affair.png", matched: false },
+  { "src": "/images/cards/amethyst.png", matched: false },
+  { "src": "/images/cards/azalea.png", matched: false },
+  { "src": "/images/cards/bossanova.png", matched: false },
+  { "src": "/images/cards/byzantine.png", matched: false },
+  { "src": "/images/cards/eminence.png", matched: false },
+  { "src": "/images/cards/heart.png", matched: false },
+  { "src": "/images/cards/potions.png", matched: false },
+  { "src": "/images/cards/prince.png", matched: false },
+  { "src": "/images/cards/seance.png", matched: false },
+  { "src": "/images/cards/windsor.png", matched: false },
+  { "src": "/images/cards/wisteria.png", matched: false },
+];
 
-    { "src": "/images/cards/affair.png", matched: false },
-    { "src": "/images/cards/amethyst.png", matched: false },
-    { "src": "/images/cards/bossanova.png", matched: false },
-    { "src": "/images/cards/byzantine.png", matched: false },
-    { "src": "/images/cards/eminence.png", matched: false },
-    { "src": "/images/cards/heart.png", matched: false },
-    { "src": "/images/cards/potions.png", matched: false },
-    { "src": "/images/cards/prince.png", matched: false },
-    { "src": "/images/cards/seance.png", matched: false },
-    { "src": "/images/cards/windsor.png", matched: false },
-    { "src": "/images/cards/wisteria.png", matched: false },
-  ];
-
-// const matchAudio = [
-//   audio for matches will go here
-// ];
-
-// const noMatchAudio = [
-//  audio for non-matches will go here
-// ];
+const audio = [
+  new Audio("/audio/match.mp3"),
+  new Audio("/audio/notAMatch.mp3")
+];
 
 function Home() {
 
@@ -56,10 +53,6 @@ function Home() {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card)
   }
 
-  function randomNumber(arrLen) {
-    return Math.floor(Math.random() * arrLen);
-  }
-
 // compare two selected cards
 useEffect(() => {
   if (choiceOne && choiceTwo) {
@@ -69,18 +62,16 @@ useEffect(() => {
       setCards(prevCards => {
         return prevCards.map(card => {
           if (card.src === choiceOne.src) {
-            // let sound = new Audio(noMatchAudio[2]);
-            // sound.play(); 
-            return {...card, matched: true} ;
+            audio[0].play(); 
+            return {...card, matched: true};
           } else {
-            // let sound2 = new Audio(matchAudio[1]);
-            // sound2.play();
             return card;
           }
         })
       })
       resetTurn();
     } else {
+      audio[1].play();
       setTimeout(() => resetTurn(), 1000);
     }
   }}, [choiceOne, choiceTwo])
@@ -104,7 +95,7 @@ useEffect(() => {
           <button onClick={shuffleCards}>Pair Some Purples!</button>
 
           <div className="card-grid">
-            {purplePairs.map(card => (
+            {cards.map(card => (
               <SingleCard 
                 key={card.id} 
                 card={card}
