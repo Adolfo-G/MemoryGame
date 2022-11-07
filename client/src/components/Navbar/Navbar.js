@@ -44,13 +44,13 @@ function Navbar() {
                     <li>
                         <Link to="/scoreboard"
                             className="link">
-                            scoreboard
+                            Scoreboard
                         </Link>
                     </li>
                     <li>
                         <Link to="/profile"
                             className="link">
-                            profile
+                            Profile
                         </Link>
                     </li>
                 </ul>

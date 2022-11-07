@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Handlee&family=Mulish&family=Nabla&family=Seymour+One&display=swap');
+:root{
+  --windsor: #580e8b;
+  --wisteria:#c78cd9;
+  --snow:#fcf0fc;
+}
+
 
 body {
   margin: 0;
@@ -12,9 +18,9 @@ body {
 }
 
 button {
-  font-family: 'Nabla', sans-serif;
-  background-color: black;
-  font-weight: 900;
+  font-family: 'Handlee', sans-serif;
+  background-color: var(--snow);
+  font-weight: bold;
 }
 
 code {

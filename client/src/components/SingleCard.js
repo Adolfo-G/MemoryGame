@@ -15,7 +15,7 @@ export default function SingleCard({ card, handleChoice, flipped }) {
             alt="card front"/>
           <img 
             className="back" 
-            src="images/cards/coverCard.png"
+            src="images/cards/cover.png"
             onClick={handleClick} 
             alt="card back" 
           />
@@ -23,3 +23,5 @@ export default function SingleCard({ card, handleChoice, flipped }) {
       </div>
     )
 }
+
+
