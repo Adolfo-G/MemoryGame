@@ -7,8 +7,7 @@ function authCheck() {
     if (Auth.loggedIn() === false) {
         return (
             <p className="logged-out-text">
-                You need to be logged in to see this. Use the navigation links above to
-                log in!
+                Please log in to view the Scoreboard
             </p>
         );
     }
@@ -47,6 +46,7 @@ function Scoreboard() {
                         <table className='scoreboard'>
                             <thead>
                                 <tr>
+                                    <td>Rank</td>
                                     <td>Player</td>
                                     <td>Score</td>
                                 </tr>
@@ -54,7 +54,7 @@ function Scoreboard() {
                             <tbody>
                                 <>
                                     {scores.map((score) => (
-                                        <Scores score={score} />
+                                        <Scores score={score} key={Math.random()+1} />
                                     ))}
                                 </>
                             </tbody>

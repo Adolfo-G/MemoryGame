@@ -6,8 +6,7 @@ function authCheck() {
     if (Auth.loggedIn() === false) {
         return (
             <p className="logged-out-text">
-                You need to be logged in to see this. Use the navigation links above to
-                log in!
+                Please log in to view a profile 
             </p>
         );
     }
@@ -18,6 +17,14 @@ function Profile() {
     const [profile, setProfile] = useState({})
     const [inputStyle, setInputStyle] = useState({ display: 'none' })
     const [newName, setNewName] = useState('')
+
+    let ranks={
+        1:"Bronze",
+        2:"Silver",
+        3:"Gold",
+        4:"Platinum",
+        5:"Diamond"
+    }
 
     const getProfile = () => {
         async function fetchProfile() {
@@ -105,7 +112,7 @@ function Profile() {
                         <button className="submit-namechange">Submit</button>
                     </form>
                 </div>
-                <h2 className="profileRank profileInfo">Rank: {profile.rank}</h2>
+                <h2 className="profileRank profileInfo">Rank: {ranks[profile.rank] ? ranks[profile.rank] : "Diamond"}</h2>
                 <h2 className="profileMaxHighscore profileInfo">Top HighScore: {profile.score}</h2>
                 <h2 className="profileExp profileInfo">Experience: {exp}/{expMax}</h2>
                 <div id="progressbar">

@@ -24,9 +24,9 @@ const userSchema = new Schema({
     default: 0,
   },
   rank:{
-    type: String,
+    type: Number,
     required:false,
-    default: "bronze",
+    default: 1,
   },
   experience:{
     type: Number,
