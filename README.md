@@ -1,7 +1,7 @@
 
 # History Of Violets
 
-A team joined arms in the mission to continue their neverending studies in software development. This is the result of the first missoion to keep learning! A memory game. Simple in appearance. Hopefully simple the team's future retrospect. But during the product's contruction, anything but. 
+A team joined arms in the mission to continue their neverending studies in software development. This is the result of the first mission to keep learning! A memory game. Simple in appearance. Hopefully simple the team's future retrospect. But during the product's contruction, anything but. 
 
 Many theme ideas were considered. The idea of matching different shades of the same color made the developers chuckle and later, curse. It is the creators' hope that you also chuckle, curse, and concentrate while playing this game of "Why would anyone do this?!" 
 
@@ -24,7 +24,7 @@ Users do not need to install anything to play.
 
 Below is a mockup of the pairing game in action. The image shows off the styling nicely but if you play, you will also enjoy our cool sounds!
 
-<img src="./assets/images/purplepairs.gif" width="490" height="340" alt="History of Violets"/>
+<img src="https://media.giphy.com/media/hpnIrdQQ7Ld2yb7IyF/giphy.gif" width="490" height="340" alt="History of Violets"/>
 
 ## Resources-used
 
@@ -37,6 +37,8 @@ Below is a mockup of the pairing game in action. The image shows off the styling
 In the future, the team would like to improve the spacing of the cards. 
 
 The team is also considering the timing of the delay verses the length of the sound for a pair of cards that match. 
+
+Another improvement for the project is a toggle to turn the sound on and off. The toggle would also signal to the user to expect audio since unexpected sound is kind of terrible. 
 
 Lastly, this application hopes to find a more offical home soon so it can more easily irrate more people. 
 
