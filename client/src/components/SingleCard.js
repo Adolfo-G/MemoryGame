@@ -23,5 +23,3 @@ export default function SingleCard({ card, handleChoice, flipped }) {
       </div>
     )
 }
-
-

@@ -1,11 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Mulish&family=Nabla&family=Seymour+One&display=swap');
+
+:root{
+  --windsor: #580e8b;
+  --wisteria:#c78cd9;
+  --snow:#fcf0fc;
+}
+
+
 .edit-name-btn{
     text-decoration: unset;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Seymour One', Times, serif;
+    color: var(--windsor);
     
 }
 .submit-namechange{
     text-decoration: unset;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Seymour One', Times, serif;
 }
 .profileInfo{
     font-size: unset;
@@ -16,7 +26,7 @@
     flex-wrap: wrap;
     height: 100vh;
     width: 100vw;
-    background: url('../../../public/images/mel-poole-eo5Hrzyb4D0-unsplash.jpg') no-repeat center;
+    background: url('../../../public/images/purplyBackground.png') no-repeat center;
     background-size: cover;
 }
 
@@ -35,7 +45,7 @@
 .profileName {
     text-align: center;
     padding-top: 20px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Handlee', sans-serif;
 }
 .profileName button{
     display: block;
@@ -56,15 +66,16 @@
     height: 20px;
 }
 
-.profileInfo{
+.profileInfo {
     text-align: left;
     font-size: 30px;
     margin-left: 10%;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Mulish', Times, serif;
 }
-.edit-name-btn{
+.edit-name-btn {
     background: none;
     border: none;
+    
     text-decoration: underline;
     color: rgb(3, 167, 255);
     font-size: 16px;
@@ -72,7 +83,7 @@
 .edit-name-btn:hover{
     cursor: pointer;
 }
-.edit-username{
+.edit-username {
     width: 60%;
     padding: 10px 0;
     font-size: 1rem;
