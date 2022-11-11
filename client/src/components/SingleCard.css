@@ -45,3 +45,6 @@
     transform: rotateY(90deg);
     transition-delay: 0s;
 }
+.scoreboardData{
+    color: white;
+}

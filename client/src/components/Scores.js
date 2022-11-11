@@ -14,9 +14,9 @@ function Scores(data) {
     return (
         <>
             <tr>
-                <td>{ranks[rank]?ranks[rank]:"Diamond"}</td>
-                <td>{name}</td>
-                <td>{score}</td>
+                <td className="scoreboardData">{ranks[rank]?ranks[rank]:"Diamond"}</td>
+                <td className="scoreboardData">{name}</td>
+                <td className="scoreboardData">{score}</td>
             </tr>
         </>
     )

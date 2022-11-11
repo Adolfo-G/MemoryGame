@@ -8,5 +8,6 @@ body {
   background-image: linear-gradient(to bottom right, var(--wisteria), var(--windsor));
   color: var(--snow);
   padding: 2px;
+  height: 100vh;
 }
 
