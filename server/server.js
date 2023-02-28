@@ -12,7 +12,7 @@ const app = express();
 
 app.use(
   cors({
-    origin:"http://localhost:3000",
+    origin:"http://localhost:3000" ||"https://git.heroku.com/memory-game1100.git",
     methods:["GET", "POST", "PUT", "DELETE"],
   })
 )
