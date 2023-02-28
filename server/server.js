@@ -12,7 +12,7 @@ const app = express();
 
 app.use(
   cors({
-    origin:"http://localhost:3000" ||"https://git.heroku.com/memory-game1100.git",
+    origin:"http://localhost:3000",
     methods:["GET", "POST", "PUT", "DELETE"],
   })
 )
@@ -27,10 +27,10 @@ app.use(authMiddleware)
 app.use('/images', express.static(path.join(__dirname, '../client/images')));
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/build')));
+  app.use(express.static(path.join(__dirname, '../client/build/index.html')));
 }
 
-app.use('/', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
